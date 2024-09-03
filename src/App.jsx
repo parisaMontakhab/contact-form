@@ -33,6 +33,33 @@ export default function App() {
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="email"/>
           </div>
 
+          <div className="flex space-x-4 mb-4">
+
+          <div className="w-1/2 relative">
+         
+          <label className="block text-neutral_graydark font-sans text-base mb-2" for='querytype'>Query Type
+            <span className=" text-primary_greenmedium font-sans text-lg mx-3">*</span>
+          </label>
+          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg "  id="querytype"/>
+          <input type="radio" id='general' className="absolute bottom-4 left-6 "/>
+          <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">General Enquiry</label>
+          </div>
+
+          <div className="w-1/2 relative">
+          
+          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg mt-9" id="lastname"/>
+          <input type="radio" id='general' className="absolute bottom-4 left-6 "/>
+          <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">Support Request</label>
+
+          </div>
+
+        </div>
+
+
+        
+
+
+
       </form>
 
     </div>
