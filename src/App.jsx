@@ -8,6 +8,19 @@ export default function App() {
         
         <h2 className="text-neutral_graydark text-3xl font-sans font-bold mb-5">Contact Us</h2>
 
+        <div className="flex space-x-4 mb-4">
+
+          <div className="w-1/2">
+          <label className="block text-neutral_graydark font-sans text-lg mb-2" for='firstname'>First Name
+            <span className=" text-primary_greenmedium font-sans text-lg mx-4">*</span>
+          </label>
+          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="firstname"/>
+          
+
+          </div>
+
+        </div>
+
       </form>
 
     </div>
