@@ -15,9 +15,16 @@ export default function App() {
             <span className=" text-primary_greenmedium font-sans text-lg mx-4">*</span>
           </label>
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="firstname"/>
-          
-
           </div>
+
+          <div className="w-1/2">
+          <label className="block text-neutral_graydark font-sans text-lg mb-2" for='lastname'>Last Name
+            <span className=" text-primary_greenmedium font-sans text-lg mx-4">*</span>
+          </label>
+          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="lastname"/>
+          </div>
+
+
 
         </div>
 
