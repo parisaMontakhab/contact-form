@@ -55,6 +55,12 @@ export default function App() {
 
         </div>
 
+        <div class="mb-4">
+      <label class="block text-neutral_graydark font-sans text-base mb-2" for="message">Message
+      <span className=" text-primary_greenmedium font-sans text-lg mx-3">*</span>
+      </label>
+      <textarea class="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" id="message" ></textarea>
+    </div>
 
         
 
