@@ -11,22 +11,27 @@ export default function App() {
         <div className="flex space-x-4 mb-4">
 
           <div className="w-1/2">
-          <label className="block text-neutral_graydark font-sans text-lg mb-2" for='firstname'>First Name
-            <span className=" text-primary_greenmedium font-sans text-lg mx-4">*</span>
+          <label className="block text-neutral_graydark font-sans text-base mb-2" for='firstname'>First Name
+            <span className=" text-primary_greenmedium font-sans text-lg mx-3">*</span>
           </label>
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="firstname"/>
           </div>
 
           <div className="w-1/2">
-          <label className="block text-neutral_graydark font-sans text-lg mb-2" for='lastname'>Last Name
-            <span className=" text-primary_greenmedium font-sans text-lg mx-4">*</span>
+          <label className="block text-neutral_graydark font-sans text-base mb-2" for='lastname'>Last Name
+            <span className=" text-primary_greenmedium font-sans text-lg mx-3">*</span>
           </label>
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="lastname"/>
           </div>
 
-
-
         </div>
+
+        <div className="mb-4">
+          <label className="block text-neutral_graydark font-sans text-base mb-2" for='email'>Email Adress
+            <span className=" text-primary_greenmedium font-sans text-lg mx-3">*</span>
+          </label>
+          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="email"/>
+          </div>
 
       </form>
 
