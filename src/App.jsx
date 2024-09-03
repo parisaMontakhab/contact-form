@@ -2,10 +2,10 @@
 
 export default function App() {
   return (
-    <div >
-     
-    hello
+   
+    <div className="min-h-screen flex items-center justify-center">
       
+
     </div>
   );
 }
