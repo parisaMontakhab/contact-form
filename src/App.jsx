@@ -62,7 +62,11 @@ export default function App() {
       <textarea className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" id="message" ></textarea>
     </div>
 
-        <div>
+        <div className="mb-4">
+
+          <input type="checkbox" className=""/>
+          <span className="ml-3  text-neutral_graydark font-sans text-base ">I consent to being contaced by the team</span>
+          <span className=" text-primary_greenmedium font-sans text-lg mx-1 ">*</span>
 
         </div>
 
