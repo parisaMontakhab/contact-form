@@ -53,6 +53,11 @@
     cursor: pointer;
 }
 
+.inputext-form:focus {
+    border-color: hsl(169, 82%, 27%);
+    outline: none;
+}
+
 .inputradio-form {
     position: absolute;
     bottom: 1rem /* 16px */;
@@ -82,6 +87,14 @@
     border-radius: 0.5rem /* 8px */;
     cursor: pointer;
 }
+
+.textarea-form:focus {
+    border-color: hsl(169, 82%, 27%);
+    outline: none;
+}
+
+
+
 
 .spantext-form {
     margin-left: 0.75rem /* 12px */;
