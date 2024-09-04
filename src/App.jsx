@@ -5,7 +5,7 @@ export default function App() {
    
     <div className="main-div">
       
-      <form className="bg-neutral_white rounded-xl w-full max-w-2xl p-8">
+      <form className="form-contact">
         
         <h2 className="text-neutral_graydark text-3xl font-sans font-bold mb-5">Contact Us</h2>
 

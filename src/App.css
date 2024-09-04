@@ -5,3 +5,11 @@
     justify-content: center;
 
 }
+
+.form-contact {
+    background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
+    border-radius: 0.75rem ;
+    width: 100%;
+    max-width: 42rem;
+    padding: 2rem;
+}
