@@ -7,7 +7,7 @@ export default function App() {
       
       <form className="form-contact">
         
-        <h2 className="text-neutral_graydark text-3xl font-sans font-bold mb-5">Contact Us</h2>
+        <h2 className="title-form">Contact Us</h2>
 
         <div className="flex space-x-4 mb-4">
 

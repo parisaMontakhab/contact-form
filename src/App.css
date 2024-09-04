@@ -13,3 +13,12 @@
     max-width: 42rem;
     padding: 2rem;
 }
+
+.title-form {
+    color:  hsl(187, 24%, 22%);
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-family: Karla, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
