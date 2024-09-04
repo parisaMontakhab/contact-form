@@ -43,14 +43,14 @@ export default function App() {
           </label>
           <input className="inputext-form"  id="querytype"/>
           <input type="radio" id='general' className="inputradio-form "/>
-          <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">General Enquiry</label>
+          <label for='general' className="labelradio-form">General Enquiry</label>
           </div>
 
           <div className="w-1/2 relative">
           
           <input className="inputext-form mt-9" id="supportquery"/>
           <input type="radio" id='general' className="inputradio-form"/>
-          <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">Support Request</label>
+          <label for='general' className="labelradio-form">Support Request</label>
 
           </div>
 
