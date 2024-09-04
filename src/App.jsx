@@ -1,9 +1,10 @@
 
-
+import './App.css';
 export default function App() {
   return (
    
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="main-div">
+      
       <form className="bg-neutral_white rounded-xl w-full max-w-2xl p-8">
         
         <h2 className="text-neutral_graydark text-3xl font-sans font-bold mb-5">Contact Us</h2>
