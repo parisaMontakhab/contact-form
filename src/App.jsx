@@ -60,7 +60,7 @@ export default function App() {
       <label className="label-form" for="message">Message
       <span className="star-form">*</span>
       </label>
-      <textarea className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" id="message" ></textarea>
+      <textarea className="textarea-form" id="message" ></textarea>
     </div>
 
         <div className="mb-8">
