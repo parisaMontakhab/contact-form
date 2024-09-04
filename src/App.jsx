@@ -42,14 +42,14 @@ export default function App() {
             <span className="star-form">*</span>
           </label>
           <input className="inputext-form"  id="querytype"/>
-          <input type="radio" id='general' className="absolute bottom-4 left-6 "/>
+          <input type="radio" id='general' className="inputradio-form "/>
           <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">General Enquiry</label>
           </div>
 
           <div className="w-1/2 relative">
           
-          <input className="inputext-form mt-9" id="lastname"/>
-          <input type="radio" id='general' className="absolute bottom-4 left-6 "/>
+          <input className="inputext-form mt-9" id="supportquery"/>
+          <input type="radio" id='general' className="inputradio-form"/>
           <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">Support Request</label>
 
           </div>
