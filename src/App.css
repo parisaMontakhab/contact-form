@@ -22,3 +22,12 @@
     font-weight: 700;
     margin-bottom: 1.25rem;
 }
+
+.label-form {
+    display: block;
+    color: hsl(187 ,24% ,22% );
+    font-family: Karla, sans-serif;
+    font-size: 1rem ;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+}

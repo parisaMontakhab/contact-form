@@ -12,14 +12,14 @@ export default function App() {
         <div className="flex space-x-4 mb-4">
 
           <div className="w-1/2">
-          <label className="block text-neutral_graydark font-sans text-base mb-2" for='firstname'>First Name
+          <label className="label-form" for='firstname'>First Name
             <span className=" text-primary_greenmedium font-sans text-lg mx-1">*</span>
           </label>
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="firstname"/>
           </div>
 
           <div className="w-1/2">
-          <label className="block text-neutral_graydark font-sans text-base mb-2" for='lastname'>Last Name
+          <label className="label-form" for='lastname'>Last Name
             <span className=" text-primary_greenmedium font-sans text-lg mx-1">*</span>
           </label>
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="lastname"/>
@@ -38,7 +38,7 @@ export default function App() {
 
           <div className="w-1/2 relative">
          
-          <label className="block text-neutral_graydark font-sans text-base mb-2" for='querytype'>Query Type
+          <label className="label-form" for='querytype'>Query Type
             <span className=" text-primary_greenmedium font-sans text-lg mx-1">*</span>
           </label>
           <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg "  id="querytype"/>
@@ -57,7 +57,7 @@ export default function App() {
         </div>
 
         <div className="mb-4">
-      <label className="block text-neutral_graydark font-sans text-base mb-2" for="message">Message
+      <label className="label-form" for="message">Message
       <span className=" text-primary_greenmedium font-sans text-lg mx-1">*</span>
       </label>
       <textarea className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" id="message" ></textarea>
