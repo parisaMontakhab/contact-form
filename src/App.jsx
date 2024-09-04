@@ -15,23 +15,23 @@ export default function App() {
           <label className="label-form" for='firstname'>First Name
             <span className="star-form">*</span>
           </label>
-          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="firstname"/>
+          <input className="inputext-form" type="text" id="firstname"/>
           </div>
 
           <div className="w-1/2">
           <label className="label-form" for='lastname'>Last Name
             <span className="star-form">*</span>
           </label>
-          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="lastname"/>
+          <input className="inputext-form" type="text" id="lastname"/>
           </div>
 
         </div>
 
         <div className="mb-4">
-          <label className="block text-neutral_graydark font-sans text-base mb-2" for='email'>Email Adress
-            <span className=" text-primary_greenmedium font-sans text-lg mx-1">*</span>
+          <label className="label-form" for='email'>Email Adress
+            <span className="star-form">*</span>
           </label>
-          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg" type="text" id="email"/>
+          <input className="inputext-form" type="text" id="email"/>
           </div>
 
           <div className="flex space-x-4 mb-4">
@@ -41,14 +41,14 @@ export default function App() {
           <label className="label-form" for='querytype'>Query Type
             <span className="star-form">*</span>
           </label>
-          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg "  id="querytype"/>
+          <input className="inputext-form"  id="querytype"/>
           <input type="radio" id='general' className="absolute bottom-4 left-6 "/>
           <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">General Enquiry</label>
           </div>
 
           <div className="w-1/2 relative">
           
-          <input className="w-full px-3 py-2 border border-neutral_graymedium rounded-lg mt-9" id="lastname"/>
+          <input className="inputext-form mt-9" id="lastname"/>
           <input type="radio" id='general' className="absolute bottom-4 left-6 "/>
           <label for='general' className="block text-neutral_graydark font-sans   font-normal text-base  absolute bottom-3 left-12">Support Request</label>
 

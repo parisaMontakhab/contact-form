@@ -40,3 +40,14 @@
     margin-left: 0.25rem;
     margin-right: 0.25rem;
 }
+
+.inputext-form {
+    width: 100%;
+    padding-left: 0.75rem /* 12px */;
+    padding-right: 0.75rem /* 12px */;
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
+    border-width: 1px;
+    border-color: hsl(186 ,15% ,59% );
+    border-radius: 0.5rem /* 8px */;
+}
