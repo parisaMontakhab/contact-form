@@ -50,6 +50,7 @@
     border-width: 1px;
     border-color: hsl(186 ,15% ,59% );
     border-radius: 0.5rem /* 8px */;
+    cursor: pointer;
 }
 
 .inputradio-form {
@@ -79,6 +80,7 @@
     border-width: 1px;
     border-color: hsl(186 15% 59% );
     border-radius: 0.5rem /* 8px */;
+    cursor: pointer;
 }
 
 .spantext-form {
@@ -87,6 +89,7 @@
     font-family: Karla, sans-serif;
     font-size: 1rem /* 16px */;
     line-height: 1.5rem /* 24px */;
+    cursor: pointer;
 }
 
 .submitbtn-form {
@@ -97,4 +100,5 @@
     color: hsl(0 0% 100% );
     font-family: Karla, sans-serif;
     font-weight: 700;
+    cursor: pointer;
 }
