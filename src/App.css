@@ -3,7 +3,6 @@
     display:flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .form-contact {
@@ -86,6 +85,7 @@
     border-color: hsl(186 15% 59% );
     border-radius: 0.5rem /* 8px */;
     cursor: pointer;
+    resize: none;
 }
 
 .textarea-form:focus {
