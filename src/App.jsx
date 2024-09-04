@@ -73,7 +73,7 @@ export default function App() {
 
         <div className="mb-4">
 
-          <button className="w-full bg-primary_greenmedium p-4 rounded-lg text-neutral_white font-sans font-medium">Submit</button>
+          <button className="submitbtn-form">Submit</button>
 
         </div>
 
