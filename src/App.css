@@ -7,7 +7,7 @@
 }
 
 .form-contact {
-    background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
+    background-color: hsl(0, 0% ,100% );
     border-radius: 0.75rem ;
     width: 100%;
     max-width: 42rem;
@@ -30,4 +30,13 @@
     font-size: 1rem ;
     line-height: 1.5rem;
     margin-bottom: 0.5rem;
+}
+
+.star-form {
+    color: hsl(169, 82% ,27% );
+    font-family: Karla, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }
