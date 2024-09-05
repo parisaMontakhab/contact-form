@@ -39,7 +39,7 @@ export default function App() {
 
           <div className="flex space-x-4 mb-4 items-center">
 
-            <div className="radiodiv-form">
+            <div className="radiodiv-form ">
             <input type="radio" className="cursor-pointer"/>
             <label className="radiolabel-form">General Enquiry</label>
 
