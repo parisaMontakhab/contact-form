@@ -120,3 +120,14 @@
 .submitbtn-form:hover {
     background-color: hsl(169, 83%, 16%);
 }
+
+
+input[type="checkbox"] {
+   
+    accent-color:hsl(169, 82%, 27%);
+     cursor: pointer;
+     outline: none;
+  
+}
+
+

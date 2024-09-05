@@ -65,7 +65,7 @@ export default function App() {
 
         <div className="mb-8">
 
-          <input type="checkbox" className=""/>
+          <input type="checkbox" />
           <span className="spantext-form">I consent to being contaced by the team</span>
           <span className="star-form">*</span>
 
