@@ -5,7 +5,7 @@ export default function App() {
       <form className="form-contact">
         <h2 className="title-form">Contact Us</h2>
 
-        <div className="flex gap-3 mb-4 ">
+        <div className="flex-box">
           <div className="w-1/2 ">
             <label className="label-form" for="firstname">
               First Name
@@ -37,7 +37,7 @@ export default function App() {
             <span className="star-form">*</span>
           </label>
 
-          <div className="flex gap-3 mb-4 ">
+          <div className="flex-box ">
 
             <div className="radiodiv-form ">
             <input type="radio" className="cursor-pointer"/>

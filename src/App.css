@@ -22,6 +22,14 @@
   margin-bottom: 1.25rem;
 }
 
+.flex-box{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 16px;
+
+}
+
 
 .label-form {
   display: block;
