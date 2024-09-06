@@ -6,7 +6,7 @@ export default function App() {
         <h2 className="title-form">Contact Us</h2>
 
         <div className="flex-box">
-          <div className="w-1/2 ">
+          <div className="box ">
             <label className="label-form" for="firstname">
               First Name
               <span className="star-form">*</span>
@@ -14,7 +14,7 @@ export default function App() {
             <input className="inputext-form" type="text" id="firstname" />
           </div>
 
-          <div className="w-1/2">
+          <div className="box">
             <label className="label-form" for="lastname">
               Last Name
               <span className="star-form">*</span>

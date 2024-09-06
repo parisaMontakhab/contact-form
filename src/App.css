@@ -29,6 +29,9 @@
     margin-bottom: 16px;
 
 }
+.box{
+    width: 50%;
+}
 
 
 .label-form {
@@ -151,6 +154,13 @@ input[type="radio"] {
 /*responsive*/
 
 @media (max-width: 480px) {
-
+.flex-box{
+    display: flex;
+    flex-direction: column;
+   
+}
+.box{
+    width: 100%;
+}
  
 }
