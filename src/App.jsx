@@ -64,7 +64,7 @@ export default function App() {
           <textarea className="textarea-form" id="message"></textarea>
         </div>
 
-        <div className="mb-8">
+        <div className="mb-4">
           <input type="checkbox" />
           <span className="spantext-form">
             I consent to being contaced by the team

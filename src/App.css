@@ -1,3 +1,14 @@
+body,html{
+    overflow-y: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+
 .main-div {
   min-height: 100vh;
   display: flex;
@@ -11,6 +22,10 @@
   width: 100%;
   max-width: 42rem;
   padding: 2rem;
+  margin: 0 auto; 
+  box-sizing: border-box;
+
+  
 }
 
 .title-form {
@@ -98,6 +113,7 @@
 
 .submitbtn-form {
   width: 100%;
+  margin-top: 1rem;
   background-color: hsl(169 82% 27%);
   padding: 1rem /* 16px */;
   border-radius: 0.5rem /* 8px */;
@@ -106,6 +122,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: opacity 0.3s ease;
+
 }
 
 .submitbtn-form:hover {
@@ -165,5 +182,30 @@ input[type="radio"] {
 .radiodiv-form{
     width: 100%;
 }
+.form-contact {
+    width: 90%;
+    max-width: 100%;
+    min-height: 85vh;
+    max-height: 97vh;
+    padding: 1rem;
+
+    
+  }
+
+  .title-form{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  }
+
+  .submitbtn-form{
+   margin-top: 0%;
+   margin-bottom: 2rem;
+    padding: 0.75rem;
+    font-weight: 500;
+  
+  }
  
 }
