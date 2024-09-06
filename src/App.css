@@ -1,156 +1,148 @@
 .main-div {
-    min-height: 100vh;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-contact {
-    background-color: hsl(0, 0% ,100% );
-    border-radius: 0.75rem ;
-    width: 100%;
-    max-width: 42rem;
-    padding: 2rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 42rem;
+  padding: 2rem;
 }
 
 .title-form {
-    color:  hsl(187, 24%, 22%);
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-family: Karla, sans-serif;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
+  color: hsl(187, 24%, 22%);
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
 }
 
+
 .label-form {
-    display: block;
-    color: hsl(187 ,24% ,22% );
-    font-family: Karla, sans-serif;
-    font-size: 1rem ;
-    line-height: 1.5rem;
-    margin-bottom: 0.5rem;
+  display: block;
+  color: hsl(187, 24%, 22%);
+  font-family: Karla, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .star-form {
-    color: hsl(169, 82% ,27% );
-    font-family: Karla, sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+  color: hsl(169, 82%, 27%);
+  font-family: Karla, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .inputext-form {
-    width: 100%;
-    padding-left: 0.75rem /* 12px */;
-    padding-right: 0.75rem /* 12px */;
-    padding-top: 0.5rem /* 8px */;
-    padding-bottom: 0.5rem /* 8px */;
-    border-width: 1px;
-    border-color: hsl(186 ,15% ,59% );
-    border-radius: 0.5rem /* 8px */;
-    cursor: pointer;
+  width: 100%;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  border-width: 1px;
+  border-color: hsl(186, 15%, 59%);
+  border-radius: 0.5rem /* 8px */;
+  cursor: pointer;
 }
 
 .inputext-form:focus {
-    border-color: hsl(169, 82%, 27%);
-    outline: none;
+  border-color: hsl(169, 82%, 27%);
+  outline: none;
 }
 
-
-
-
-
 .textarea-form {
-    width: 100%;
-    padding-left: 1.5rem /* 24px */;
-    padding-right: 1.5rem /* 24px */;
-    padding-top: 2rem /* 40px */;
-    padding-bottom: 2rem /* 40px */;
-    border-width: 1px;
-    border-color: hsl(186 15% 59% );
-    border-radius: 0.5rem /* 8px */;
-    cursor: pointer;
-    resize: none;
+  width: 100%;
+  padding-left: 1.5rem /* 24px */;
+  padding-right: 1.5rem /* 24px */;
+  padding-top: 2rem /* 40px */;
+  padding-bottom: 2rem /* 40px */;
+  border-width: 1px;
+  border-color: hsl(186 15% 59%);
+  border-radius: 0.5rem /* 8px */;
+  cursor: pointer;
+  resize: none;
 }
 
 .textarea-form:focus {
-    border-color: hsl(169, 82%, 27%);
-    outline: none;
+  border-color: hsl(169, 82%, 27%);
+  outline: none;
 }
 
-
-
-
 .spantext-form {
-    margin-left: 0.75rem /* 12px */;
-    color: hsl(187 24% 22% );
-    font-family: Karla, sans-serif;
-    font-size: 1rem /* 16px */;
-    line-height: 1.5rem /* 24px */;
-    cursor: pointer;
+  margin-left: 0.75rem /* 12px */;
+  color: hsl(187 24% 22%);
+  font-family: Karla, sans-serif;
+  font-size: 1rem /* 16px */;
+  line-height: 1.5rem /* 24px */;
+  cursor: pointer;
 }
 
 .submitbtn-form {
-    width: 100%;
-    background-color: hsl(169 82% 27% );
-    padding: 1rem /* 16px */;
-    border-radius: 0.5rem /* 8px */;
-    color: hsl(0 0% 100% );
-    font-family: Karla, sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
+  width: 100%;
+  background-color: hsl(169 82% 27%);
+  padding: 1rem /* 16px */;
+  border-radius: 0.5rem /* 8px */;
+  color: hsl(0 0% 100%);
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .submitbtn-form:hover {
-    background-color: hsl(169, 83%, 16%);
+  background-color: hsl(169, 83%, 16%);
 }
-
 
 input[type="checkbox"] {
-   
-    accent-color:hsl(169, 82%, 27%);
-     cursor: pointer;
-     outline: none;
-  
+  accent-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+  outline: none;
 }
-
 
 .radiodiv-form {
-    width: 50%;
-    padding-left: 0.75rem /* 12px */;
-    padding-right: 0.75rem /* 12px */;
-    padding-top: 0.5rem /* 8px */;
-    padding-bottom: 0.5rem /* 8px */;
-    border-radius: 0.5rem;
-    border-width: 1px;
-    border-style: solid;
-    border-color: hsl(186 15% 59% );
-    cursor: pointer;
-    
+  width: 50%;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: hsl(186 15% 59%);
+  cursor: pointer;
 }
-.radiodiv-form:hover{
-    background-color: hsl(148, 38%, 91%);
-    border-color:hsl(169, 82%, 27%); ; 
+.radiodiv-form:hover {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
 }
-
 
 .radiolabel-form {
-    font-family: Karla, sans-serif;
-    font-size: 1rem /* 16px */;
-    line-height: 1.5rem /* 24px */;
-    font-weight: 400;
-    margin-left: 0.75rem /* 12px */;
-    color: hsl(187 24% 22% );
-    cursor: pointer;
+  font-family: Karla, sans-serif;
+  font-size: 1rem /* 16px */;
+  line-height: 1.5rem /* 24px */;
+  font-weight: 400;
+  margin-left: 0.75rem /* 12px */;
+  color: hsl(187 24% 22%);
+  cursor: pointer;
 }
 
 input[type="radio"] {
-   
-    accent-color:hsl(169, 82%, 27%);
-     cursor: pointer;
-     outline: none;
-    
-  
+  accent-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+  outline: none;
+}
+
+/*responsive*/
+
+@media (max-width: 480px) {
+
+ 
 }
