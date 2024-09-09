@@ -18,7 +18,7 @@ export default function App() {
 
         <div className="flex-box">
           <div className="box ">
-            <label className="label-form" for="firstname">
+            <label className="label-form" htmlFor="firstname">
               First Name
               <span className="star-form">*</span>
             </label>
@@ -33,7 +33,7 @@ export default function App() {
           </div>
 
           <div className="box">
-            <label className="label-form" for="lastname">
+            <label className="label-form" htmlFor="lastname">
               Last Name
               <span className="star-form">*</span>
             </label>
@@ -42,7 +42,7 @@ export default function App() {
         </div>
 
         <div className="mb-4">
-          <label className="label-form" for="email">
+          <label className="label-form" htmlFor="email">
             Email Adress
             <span className="star-form">*</span>
           </label>
@@ -50,7 +50,7 @@ export default function App() {
         </div>
 
         <div className="mb-4">
-          <label className="label-form " for="querytype">
+          <label className="label-form " htmlFor="querytype">
             Query Type
             <span className="star-form">*</span>
           </label>
@@ -69,7 +69,7 @@ export default function App() {
         </div>
 
         <div className="mb-4">
-          <label className="label-form " for="message">
+          <label className="label-form " htmlFor="message">
             Message
             <span className="star-form">*</span>
           </label>
