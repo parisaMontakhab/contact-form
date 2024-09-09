@@ -48,7 +48,7 @@ export default function App() {
               vlau={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
-            <p className="err-text">This field is required</p>
+           {submitted && !firstName && <p className="err-text">This field is required</p>}
           </div>
 
           <div className="box">
@@ -63,7 +63,7 @@ export default function App() {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-             <p className="err-text">This field is required</p>
+            {submitted && !lastName && <p className="err-text">This field is required</p>}
           </div>
         </div>
 
