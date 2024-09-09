@@ -95,7 +95,12 @@ export default function App() {
             Message
             <span className="star-form">*</span>
           </label>
-          <textarea className="textarea-form" id="message"></textarea>
+          <textarea
+            className="textarea-form"
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          ></textarea>
         </div>
 
         <div className="mb-4">
