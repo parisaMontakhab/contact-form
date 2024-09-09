@@ -67,7 +67,13 @@ export default function App() {
 
           <div className="flex-box ">
             <div className="radiodiv-form ">
-              <input type="radio" className="cursor-pointer" />
+              <input
+                type="radio"
+                className="cursor-pointer"
+                value="General Enquiry"
+                checked={radio === "General Enquiry"}
+                onChange={(e)=>setRadio(e.target.value)}
+              />
               <label className="radiolabel-form">General Enquiry</label>
             </div>
 
