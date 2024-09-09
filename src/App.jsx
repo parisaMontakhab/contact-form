@@ -1,8 +1,19 @@
+import { useState } from "react";
 import "./App.css";
 export default function App() {
+  const [firstName,setFirstName] = useState('');
+  const [lastName,setLastName] = useState('');
+  const [email,setEmail] = useState('');
+  const [message,setMessage] = useState('');
+  const [checkBox,setCheckBox] = useState(false);
+  const [radio,setRadio] = useState('');
+
+
+
   return (
     <div className="main-div">
       <form className="form-contact">
+
         <h2 className="title-form">Contact Us</h2>
 
         <div className="flex-box">
