@@ -9,6 +9,7 @@ export default function App() {
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
   const [submitted,setSubmitted] = useState(false);
+  const [isPasting,setIsPasting] = useState(false);
   const [errore, setErrore] = useState("");
 
 
@@ -17,6 +18,10 @@ export default function App() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+  const handlePaste = (e)=>{
+    e.preventDefault();
+    setIsPasting(true);
+  }
 
   const handleSubmit =(e)=>{
     e.preventDefault();
@@ -47,8 +52,10 @@ export default function App() {
               id="firstname"
               vlau={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              onPaste={handlePaste}
+              placeholder={  isPasting  ? 'Type manually ' :''}
             />
-           {submitted && !firstName && <p className="err-text">This field is required</p>}
+           {submitted && !firstName &&  <p className="err-text">This field is required</p>}
           </div>
 
           <div className="box">
@@ -62,6 +69,8 @@ export default function App() {
               id="lastname"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              onPaste={handlePaste}
+              placeholder={  isPasting  ? 'Type manually ' :''}
             />
             {submitted && !lastName && <p className="err-text">This field is required</p>}
           </div>
@@ -78,6 +87,7 @@ export default function App() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onPaste={handlePaste}
           />
            { submitted &&!validateEmail(email) && <p className="err-text">Please enter a valid email address</p>}
         </div>
@@ -124,6 +134,7 @@ export default function App() {
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            onPaste={handlePaste}
           ></textarea>
            <p className="err-text">This field is required</p>
         </div>
