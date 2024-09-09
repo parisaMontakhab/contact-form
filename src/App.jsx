@@ -10,6 +10,11 @@ export default function App() {
   const [radio, setRadio] = useState("");
   const [errore, setErrore] = useState("");
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   return (
     <div className="main-div">
       <form className="form-contact">
@@ -59,7 +64,7 @@ export default function App() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-           <p className="err-text">Please enter a valid email address</p>
+           {!validateEmail(email) && <p className="err-text">Please enter a valid email address</p>}
         </div>
 
         <div className="mb-4">
