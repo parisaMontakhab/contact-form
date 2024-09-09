@@ -72,13 +72,19 @@ export default function App() {
                 className="cursor-pointer"
                 value="General Enquiry"
                 checked={radio === "General Enquiry"}
-                onChange={(e)=>setRadio(e.target.value)}
+                onChange={(e) => setRadio(e.target.value)}
               />
               <label className="radiolabel-form">General Enquiry</label>
             </div>
 
             <div className="radiodiv-form">
-              <input type="radio" className="cursor-pointer" />
+              <input
+                type="radio"
+                className="cursor-pointer"
+                value="Support Request"
+                checked={radio === "Support Request"}
+                onChange={(e) => setRadio(e.target.value)}
+              />
               <label className="radiolabel-form">Support Request</label>
             </div>
           </div>
