@@ -8,16 +8,31 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
+  const [submitted,setSubmitted] = useState(false);
   const [errore, setErrore] = useState("");
+
+
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
+  const handleSubmit =(e)=>{
+    e.preventDefault();
+    setSubmitted(true);
+ 
+  }
+
+
+
+
+
+
+
   return (
     <div className="main-div">
-      <form className="form-contact">
+      <form className="form-contact" onSubmit={handleSubmit}>
         <h2 className="title-form">Contact Us</h2>
 
         <div className="flex-box">
@@ -64,7 +79,7 @@ export default function App() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-           {!validateEmail(email) && <p className="err-text">Please enter a valid email address</p>}
+           { submitted &&!validateEmail(email) && <p className="err-text">Please enter a valid email address</p>}
         </div>
 
         <div className="mb-4">
