@@ -28,6 +28,7 @@ export default function App() {
               vlau={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
+            <p className="err-text">This field is required</p>
           </div>
 
           <div className="box">
@@ -42,6 +43,7 @@ export default function App() {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
+             <p className="err-text">This field is required</p>
           </div>
         </div>
 
@@ -57,6 +59,7 @@ export default function App() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+           <p className="err-text">Please enter a valid email address</p>
         </div>
 
         <div className="mb-4">
@@ -88,6 +91,7 @@ export default function App() {
               <label className="radiolabel-form">Support Request</label>
             </div>
           </div>
+          <p className="err-text">Please select a query type</p>
         </div>
 
         <div className="mb-4">
@@ -101,6 +105,7 @@ export default function App() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
+           <p className="err-text">This field is required</p>
         </div>
 
         <div className="mb-4">
@@ -109,6 +114,7 @@ export default function App() {
             I consent to being contaced by the team
           </span>
           <span className="star-form">*</span>
+          <p className="err-text">To submit this form, please consent to being contacted</p>
         </div>
 
         <div className="mb-4">
