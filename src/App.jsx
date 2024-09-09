@@ -50,7 +50,13 @@ export default function App() {
             Email Adress
             <span className="star-form">*</span>
           </label>
-          <input className="inputext-form" type="text" id="email" />
+          <input
+            className="inputext-form"
+            type="text"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
         <div className="mb-4">
