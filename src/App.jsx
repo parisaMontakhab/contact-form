@@ -8,7 +8,17 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
-  const [errore,setErrore] = useState("");
+  const [errore, setErrore] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    message: false,
+  });
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    setErrore("Pasting is disabled! Please type manually.");
+  };
 
   return (
     <div className="main-div">
@@ -27,7 +37,7 @@ export default function App() {
               id="firstname"
               vlau={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              
+              onPaste={handlePaste}
             />
           </div>
 
@@ -82,6 +92,10 @@ export default function App() {
           </span>
           <span className="star-form">*</span>
         </div>
+
+        {errore && (
+          <div className="text-primary_red font-bold mt-3">{errore}</div>
+        )}
 
         <div className="mb-4">
           <button className="submitbtn-form">Submit</button>
