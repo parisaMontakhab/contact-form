@@ -8,8 +8,7 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
-  const [errore, setErrore] = useState('');
-
+  const [errore, setErrore] = useState("");
 
   return (
     <div className="main-div">
@@ -28,7 +27,6 @@ export default function App() {
               id="firstname"
               vlau={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              
             />
           </div>
 
@@ -37,7 +35,13 @@ export default function App() {
               Last Name
               <span className="star-form">*</span>
             </label>
-            <input className="inputext-form" type="text" id="lastname" />
+            <input
+              className="inputext-form"
+              type="text"
+              id="lastname"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </div>
         </div>
 
@@ -83,8 +87,6 @@ export default function App() {
           </span>
           <span className="star-form">*</span>
         </div>
-
-        
 
         <div className="mb-4">
           <button className="submitbtn-form">Submit</button>
