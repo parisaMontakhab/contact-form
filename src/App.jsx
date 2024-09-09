@@ -17,7 +17,7 @@ export default function App() {
 
   const handlePaste = (e) => {
     e.preventDefault();
-    setErrore("Pasting is disabled! Please type manually.");
+    setErrore((prev)=>({...prev,[e.target.name]:true}));
   };
 
   return (
