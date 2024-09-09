@@ -104,7 +104,7 @@ export default function App() {
         </div>
 
         <div className="mb-4">
-          <input type="checkbox" />
+          <input type="checkbox" checked={checkBox} onChange={(e)=>setCheckBox(e.target.checked)} />
           <span className="spantext-form">
             I consent to being contaced by the team
           </span>
