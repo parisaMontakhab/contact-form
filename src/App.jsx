@@ -1,19 +1,18 @@
 import { useState } from "react";
 import "./App.css";
+
 export default function App() {
-  const [firstName,setFirstName] = useState('');
-  const [lastName,setLastName] = useState('');
-  const [email,setEmail] = useState('');
-  const [message,setMessage] = useState('');
-  const [checkBox,setCheckBox] = useState(false);
-  const [radio,setRadio] = useState('');
-
-
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [checkBox, setCheckBox] = useState(false);
+  const [radio, setRadio] = useState("");
+  const [errore,setErrore] = useState("");
 
   return (
     <div className="main-div">
       <form className="form-contact">
-
         <h2 className="title-form">Contact Us</h2>
 
         <div className="flex-box">
@@ -22,7 +21,14 @@ export default function App() {
               First Name
               <span className="star-form">*</span>
             </label>
-            <input className="inputext-form" type="text" id="firstname" />
+            <input
+              className="inputext-form"
+              type="text"
+              id="firstname"
+              vlau={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              
+            />
           </div>
 
           <div className="box">
@@ -49,22 +55,16 @@ export default function App() {
           </label>
 
           <div className="flex-box ">
-
             <div className="radiodiv-form ">
-            <input type="radio" className="cursor-pointer"/>
-            <label className="radiolabel-form">General Enquiry</label>
-
+              <input type="radio" className="cursor-pointer" />
+              <label className="radiolabel-form">General Enquiry</label>
             </div>
 
             <div className="radiodiv-form">
-            <input type="radio" className="cursor-pointer"/>
-            <label className="radiolabel-form">Support Request</label>
-
+              <input type="radio" className="cursor-pointer" />
+              <label className="radiolabel-form">Support Request</label>
             </div>
-
           </div>
-
-          
         </div>
 
         <div className="mb-4">
