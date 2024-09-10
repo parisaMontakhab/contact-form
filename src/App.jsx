@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
@@ -8,47 +9,37 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
-  const [submitted,setSubmitted] = useState(false);
-  const [isPasting,setIsPasting] = useState(false);
-  
-
-
+  const [submitted, setSubmitted] = useState(false);
+  const [isPasting, setIsPasting] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-  const handlePaste = (e)=>{
+  const handlePaste = (e) => {
     e.preventDefault();
     setIsPasting(true);
-  }
+  };
 
-  const handleSubmit =(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
 
-   const newInformation ={
-    firstName,
-    lastName,
-    id : Date.now(),
-   }
-   console.log(newInformation);
+    const newInformation = {
+      firstName,
+      lastName,
+      id: Date.now(),
+    };
+    console.log(newInformation);
 
-   setFirstName ('');
-   setLastName ('');
-   setEmail ('');
-   setMessage ('');
-   setCheckBox (false);
-   setRadio ('');
-   setSubmitted(false);
- 
-  }
-
-
-
-
- 
-
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+    setCheckBox(false);
+    setRadio("");
+    setSubmitted(false);
+  };
 
   return (
     <div className="main-div">
@@ -62,15 +53,19 @@ export default function App() {
               <span className="star-form">*</span>
             </label>
             <input
-              className={submitted && !firstName ? 'err-input' : 'inputext-form'}
+              className={
+                submitted && !firstName ? "err-input" : "inputext-form"
+              }
               type="text"
               id="firstname"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               onPaste={handlePaste}
-              placeholder={  isPasting  ? 'Type manually ' :''}
+              placeholder={isPasting ? "Type manually " : ""}
             />
-           {submitted && !firstName &&  <p className="err-text">This field is required</p>}
+            {submitted && !firstName && (
+              <p className="err-text">This field is required</p>
+            )}
           </div>
 
           <div className="box">
@@ -79,15 +74,17 @@ export default function App() {
               <span className="star-form">*</span>
             </label>
             <input
-              className={submitted && !lastName ? 'err-input' : 'inputext-form'}
+              className={submitted && !lastName ? "err-input" : "inputext-form"}
               type="text"
               id="lastname"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               onPaste={handlePaste}
-              placeholder={  isPasting  ? 'Type manually ' :''}
+              placeholder={isPasting ? "Type manually " : ""}
             />
-            {submitted && !lastName && <p className="err-text">This field is required</p>}
+            {submitted && !lastName && (
+              <p className="err-text">This field is required</p>
+            )}
           </div>
         </div>
 
@@ -97,14 +94,18 @@ export default function App() {
             <span className="star-form">*</span>
           </label>
           <input
-            className={submitted &&!validateEmail(email) ? 'err-input' : 'inputext-form'}
+            className={
+              submitted && !validateEmail(email) ? "err-input" : "inputext-form"
+            }
             type="text"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onPaste={handlePaste}
           />
-           { submitted &&!validateEmail(email) && <p className="err-text">Please enter a valid email address</p>}
+          {submitted && !validateEmail(email) && (
+            <p className="err-text">Please enter a valid email address</p>
+          )}
         </div>
 
         <div className="mb-4">
@@ -114,7 +115,11 @@ export default function App() {
           </label>
 
           <div className="flex-box ">
-            <div className={ radio === "General Enquiry" ? 'active-query' :"radiodiv-form "}>
+            <div
+              className={
+                radio === "General Enquiry" ? "active-query" : "radiodiv-form "
+              }
+            >
               <input
                 type="radio"
                 className="cursor-pointer"
@@ -125,7 +130,11 @@ export default function App() {
               <label className="radiolabel-form">General Enquiry</label>
             </div>
 
-            <div className={ radio === "Support Request" ? 'active-query' :"radiodiv-form "}>
+            <div
+              className={
+                radio === "Support Request" ? "active-query" : "radiodiv-form "
+              }
+            >
               <input
                 type="radio"
                 className="cursor-pointer"
@@ -136,7 +145,9 @@ export default function App() {
               <label className="radiolabel-form">Support Request</label>
             </div>
           </div>
-         {submitted &&  !radio && <p className="err-text">Please select a query type</p>}
+          {submitted && !radio && (
+            <p className="err-text">Please select a query type</p>
+          )}
         </div>
 
         <div className="mb-4">
@@ -144,23 +155,35 @@ export default function App() {
             Message
             <span className="star-form">*</span>
           </label>
-          <textarea 
-            className={submitted && !message ? 'err-textarea' : 'textarea-form '}
+          <textarea
+            className={
+              submitted && !message ? "err-textarea" : "textarea-form "
+            }
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onPaste={handlePaste}
           ></textarea>
-           {submitted && !message && <p className="err-text">This field is required</p>}
+          {submitted && !message && (
+            <p className="err-text">This field is required</p>
+          )}
         </div>
 
         <div className="mb-4">
-          <input type="checkbox" checked={checkBox} onChange={(e)=>setCheckBox(e.target.checked)} />
+          <input
+            type="checkbox"
+            checked={checkBox}
+            onChange={(e) => setCheckBox(e.target.checked)}
+          />
           <span className="spantext-form">
             I consent to being contaced by the team
           </span>
           <span className="star-form">*</span>
-          {submitted && !checkBox && <p className="err-text">To submit this form, please consent to being contacted</p>}
+          {submitted && !checkBox && (
+            <p className="err-text">
+              To submit this form, please consent to being contacted
+            </p>
+          )}
         </div>
 
         <div className="mb-4">
@@ -170,8 +193,11 @@ export default function App() {
 
       <div className="overlay">
         <div className="overlay-box">
+          
           <p className="overlay-title">Message sent !</p>
-          <p className="overlay-text">Thanks for completing the form,we'll be in touch soon!</p>
+          <p className="overlay-text">
+            Thanks for completing the form,we'll be in touch soon!
+          </p>
         </div>
       </div>
     </div>
