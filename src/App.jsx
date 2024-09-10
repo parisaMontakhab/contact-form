@@ -36,7 +36,19 @@ export default function App() {
   };
 
   useEffect(()=>{
-    
+    if(showMessage){
+      const handleClick = () => {
+        setShowMessage(false);
+      };
+      document.body.addEventListener('click', handleClick);
+
+      return () => {
+        document.body.removeEventListener('click', handleClick);
+      };
+    }
+
+
+
   },[showMessage])
 
   return (
