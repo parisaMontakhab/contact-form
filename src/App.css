@@ -216,7 +216,6 @@ input[type="radio"] {
   color: hsl(0 66% 54% );
   font-family: Karla, sans-serif;
   font-size: 0.875rem /* 14px */;
-  line-height: 1.25rem /* 20px */;
   margin-top: 0.5rem /* 8px */;
 }
 
