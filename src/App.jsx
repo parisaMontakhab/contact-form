@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -25,8 +25,6 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-
-    
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -36,6 +34,10 @@ export default function App() {
     setSubmitted(false);
     setShowMessage(true);
   };
+
+  useEffect(()=>{
+    
+  },[showMessage])
 
   return (
     <div className="main-div">
