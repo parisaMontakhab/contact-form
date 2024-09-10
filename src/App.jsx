@@ -32,7 +32,7 @@ export default function App() {
 
 
 
-
+ 
 
 
   return (
@@ -47,7 +47,7 @@ export default function App() {
               <span className="star-form">*</span>
             </label>
             <input
-              className="inputext-form"
+              className={submitted && !firstName ? 'err-input' : 'inputext-form'}
               type="text"
               id="firstname"
               vlau={firstName}
@@ -64,7 +64,7 @@ export default function App() {
               <span className="star-form">*</span>
             </label>
             <input
-              className="inputext-form"
+              className={submitted && !lastName ? 'err-input' : 'inputext-form'}
               type="text"
               id="lastname"
               value={lastName}

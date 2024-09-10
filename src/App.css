@@ -219,3 +219,15 @@ input[type="radio"] {
   margin-top: 0.5rem /* 8px */;
 }
 
+.err-input {
+  border-color: hsl(0, 66%, 54%);
+  width: 100%;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  border-width: 1px;
+  border-radius: 0.5rem /* 8px */;
+  cursor: pointer;
+  outline: none;
+}
