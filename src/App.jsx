@@ -100,7 +100,7 @@ export default function App() {
           </label>
 
           <div className="flex-box ">
-            <div className="radiodiv-form ">
+            <div className={ radio === "General Enquiry" ? 'active-query' :"radiodiv-form "}>
               <input
                 type="radio"
                 className="cursor-pointer"
@@ -111,7 +111,7 @@ export default function App() {
               <label className="radiolabel-form">General Enquiry</label>
             </div>
 
-            <div className="radiodiv-form">
+            <div className={ radio === "Support Request" ? 'active-query' :"radiodiv-form "}>
               <input
                 type="radio"
                 className="cursor-pointer"
