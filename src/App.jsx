@@ -122,7 +122,7 @@ export default function App() {
               <label className="radiolabel-form">Support Request</label>
             </div>
           </div>
-          <p className="err-text">Please select a query type</p>
+         {submitted &&  !radio && <p className="err-text">Please select a query type</p>}
         </div>
 
         <div className="mb-4">
