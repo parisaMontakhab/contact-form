@@ -26,6 +26,7 @@ export default function App() {
   const handleSubmit =(e)=>{
     e.preventDefault();
     setSubmitted(true);
+    
  
   }
 
@@ -145,7 +146,7 @@ export default function App() {
             I consent to being contaced by the team
           </span>
           <span className="star-form">*</span>
-          <p className="err-text">To submit this form, please consent to being contacted</p>
+          {submitted && !checkBox && <p className="err-text">To submit this form, please consent to being contacted</p>}
         </div>
 
         <div className="mb-4">
