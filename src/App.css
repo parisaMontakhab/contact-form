@@ -88,8 +88,8 @@ body,html{
   width: 100%;
   padding-left: 1.5rem /* 24px */;
   padding-right: 1.5rem /* 24px */;
-  padding-top: 2rem /* 40px */;
-  padding-bottom: 2rem /* 40px */;
+  padding-top: 1.5rem /* 40px */;
+  padding-bottom: 1.5rem /* 40px */;
   border-width: 1px;
   border-color: hsl(186 15% 59%);
   border-radius: 0.5rem /* 8px */;
