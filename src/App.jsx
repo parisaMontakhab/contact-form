@@ -167,6 +167,13 @@ export default function App() {
           <button className="submitbtn-form">Submit</button>
         </div>
       </form>
+
+      <div className="overlay">
+        <div className="overlay-box">
+          <p className="overlay-title">Message sent !</p>
+          <p className="overlay-text">Thanks for completing the form,we'll be in touch soon!</p>
+        </div>
+      </div>
     </div>
   );
 }
