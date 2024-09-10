@@ -293,3 +293,15 @@ input[type="radio"] {
   font-weight: 200;
 }
 
+.message-container {
+  display: flex;
+ 
+  margin-bottom: 10px;
+}
+
+/* Style for the check icon */
+.check-icon {
+  color: hsl(0, 0%, 100%);
+  font-size: 24px; /* Adjust size as needed */
+  margin-right: 10px; /* Space between icon and text */
+}
