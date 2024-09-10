@@ -10,7 +10,7 @@ export default function App() {
   const [radio, setRadio] = useState("");
   const [submitted,setSubmitted] = useState(false);
   const [isPasting,setIsPasting] = useState(false);
-  const [errore, setErrore] = useState("");
+  
 
 
 
@@ -26,7 +26,21 @@ export default function App() {
   const handleSubmit =(e)=>{
     e.preventDefault();
     setSubmitted(true);
-    
+
+   const newInformation ={
+    firstName,
+    lastName,
+    id : Date.now(),
+   }
+   console.log(newInformation);
+
+   setFirstName ('');
+   setLastName ('');
+   setEmail ('');
+   setMessage ('');
+   setCheckBox (false);
+   setRadio ('');
+   setSubmitted(false);
  
   }
 
@@ -51,7 +65,7 @@ export default function App() {
               className={submitted && !firstName ? 'err-input' : 'inputext-form'}
               type="text"
               id="firstname"
-              vlau={firstName}
+              value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               onPaste={handlePaste}
               placeholder={  isPasting  ? 'Type manually ' :''}

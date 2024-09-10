@@ -7,7 +7,7 @@ body,html{
     box-sizing: border-box;
   }
 
-
+/* form contact-us*/
 
 .main-div {
   min-height: 100vh;
@@ -255,3 +255,4 @@ input[type="radio"] {
   resize: none;
   outline: none;
 }
+
