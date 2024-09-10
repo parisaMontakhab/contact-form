@@ -82,7 +82,7 @@ export default function App() {
             <span className="star-form">*</span>
           </label>
           <input
-            className="inputext-form"
+            className={submitted &&!validateEmail(email) ? 'err-input' : 'inputext-form'}
             type="text"
             id="email"
             value={email}
