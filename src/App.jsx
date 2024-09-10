@@ -136,7 +136,7 @@ export default function App() {
             onChange={(e) => setMessage(e.target.value)}
             onPaste={handlePaste}
           ></textarea>
-           <p className="err-text">This field is required</p>
+           {submitted && !message && <p className="err-text">This field is required</p>}
         </div>
 
         <div className="mb-4">
