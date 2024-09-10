@@ -25,14 +25,8 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setMessage("");
-    setCheckBox(false);
-    setRadio("");
-    setSubmitted(false);
-    setShowMessage(true);
+
+    
   };
 
   useEffect(()=>{
