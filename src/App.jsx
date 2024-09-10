@@ -11,6 +11,7 @@ export default function App() {
   const [radio, setRadio] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isPasting, setIsPasting] = useState(false);
+  const [showMessage,setShowMessage] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,13 +26,7 @@ export default function App() {
     e.preventDefault();
     setSubmitted(true);
 
-    const newInformation = {
-      firstName,
-      lastName,
-      id: Date.now(),
-    };
-    console.log(newInformation);
-
+    
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -39,6 +34,7 @@ export default function App() {
     setCheckBox(false);
     setRadio("");
     setSubmitted(false);
+    setShowMessage(true);
   };
 
   return (
@@ -191,7 +187,7 @@ export default function App() {
         </div>
       </form>
 
-      <div className="overlay">
+      { showMessage && <div className="overlay">
         <div className="overlay-box">
           <div className="message-container">
             <FaCheckCircle className="check-icon" />
@@ -202,7 +198,8 @@ export default function App() {
             Thanks for completing the form,we'll be in touch soon!
           </p>
         </div>
-      </div>
+      </div>}
+
     </div>
   );
 }
