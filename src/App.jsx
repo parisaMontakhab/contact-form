@@ -129,8 +129,8 @@ export default function App() {
             Message
             <span className="star-form">*</span>
           </label>
-          <textarea
-            className="textarea-form"
+          <textarea 
+            className={submitted && !message ? 'err-textarea' : 'textarea-form '}
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

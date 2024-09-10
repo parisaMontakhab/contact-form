@@ -231,3 +231,17 @@ input[type="radio"] {
   cursor: pointer;
   outline: none;
 }
+
+.err-textarea {
+  width: 100%;
+  padding-left: 1.5rem /* 24px */;
+  padding-right: 1.5rem /* 24px */;
+  padding-top: 2rem /* 40px */;
+  padding-bottom: 2rem /* 40px */;
+  border-width: 1px;
+  border-color: hsl(0, 66%, 54%);
+  border-radius: 0.5rem /* 8px */;
+  cursor: pointer;
+  resize: none;
+  outline: none;
+}
