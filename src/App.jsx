@@ -23,7 +23,7 @@ export default function App() {
     }
   
     
-    const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+    const nameRegex = /^[A-Za-z\u0600-\u06FF\s]+$/;
     return nameRegex.test(name);
 
 
