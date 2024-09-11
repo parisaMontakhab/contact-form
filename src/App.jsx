@@ -21,10 +21,30 @@ export default function App() {
     e.preventDefault();
     setIsPasting(true);
   };
+  
+ const formIsValid = ()=>{
+  return firstName&&lastName&&email&&radio&&message&&checkBox
+ };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+   
+    if(formIsValid()){
+      setShowMessage(true);
+      setSubmitted(false);
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setMessage('');
+      setCheckBox('');
+      setRadio('');
+      
+    }
+    else{
+      setSubmitted(true);
+    }
 
     
   };
