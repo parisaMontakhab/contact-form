@@ -17,6 +17,7 @@ export default function App() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
   const handlePaste = (e) => {
     e.preventDefault();
     setIsPasting(true);
@@ -121,7 +122,7 @@ export default function App() {
             className={
               submitted && !validateEmail(email) ? "err-input" : "inputext-form"
             }
-            type="text"
+            type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
