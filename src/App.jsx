@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useCallback } from "react";
 import "./App.css";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -10,18 +10,19 @@ export default function App() {
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [isPasting, setIsPasting] = useState(false);
   const [showMessage,setShowMessage] = useState(false);
+
+ 
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handlePaste = (e) => {
+  const handlePaste = useCallback((e) => {
     e.preventDefault();
-    setIsPasting(true);
-  };
+  
+  }, []);
   
  const formIsValid = ()=>{
   return firstName&&lastName&&email&&radio&&message&&checkBox
@@ -29,26 +30,23 @@ export default function App() {
 
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-   
-    if(formIsValid()){
-      setShowMessage(true);
-      setSubmitted(false);
-      setFirstName('');
-      setLastName('');
-      setEmail('');
-      setMessage('');
-      setCheckBox('');
-      setRadio('');
-      
-    }
-    else{
-      setSubmitted(true);
-    }
-
-    
-  };
+ const handleSubmit = useCallback((e) => {
+  e.preventDefault();
+  
+  if (formIsValid()) {
+    setShowMessage(true);
+    setSubmitted(false);
+    // Clear the form
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setMessage('');
+    setCheckBox(false);
+    setRadio('');
+  } else {
+    setSubmitted(true);
+  }
+}, [firstName, lastName, email, radio, message, checkBox]);
 
   useEffect(()=>{
     if(showMessage){
@@ -86,7 +84,7 @@ export default function App() {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               onPaste={handlePaste}
-              placeholder={isPasting ? "Type manually " : ""}
+              
             />
             {submitted && !firstName && (
               <p className="err-text">This field is required</p>
@@ -105,7 +103,7 @@ export default function App() {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               onPaste={handlePaste}
-              placeholder={isPasting ? "Type manually " : ""}
+              
             />
             {submitted && !lastName && (
               <p className="err-text">This field is required</p>
@@ -122,6 +120,7 @@ export default function App() {
             className={
               submitted && !validateEmail(email) ? "err-input" : "inputext-form"
             }
+            
             type="email"
             id="email"
             value={email}
