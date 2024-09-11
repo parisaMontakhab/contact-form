@@ -14,6 +14,21 @@ export default function App() {
 
  
 
+
+  const validateName = (name)=>{
+    const minLength = 2;
+    const maxLength = 50;
+    if (name.length < minLength || name.length > maxLength) {
+      return false;
+    }
+  
+    
+    const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+    return nameRegex.test(name);
+
+
+  }
+
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -25,7 +40,7 @@ export default function App() {
   }, []);
   
  const formIsValid = ()=>{
-  return firstName&&lastName&&email&&radio&&message&&checkBox
+  return validateName(firstName)&&validateName(lastName)&&validateEmail(email)&&radio&&message&&checkBox
  };
 
 
@@ -77,7 +92,7 @@ export default function App() {
             </label>
             <input
               className={
-                submitted && !firstName ? "err-input" : "inputext-form"
+                submitted && !validateName(firstName) ? "err-input" : "inputext-form"
               }
               type="text"
               id="firstname"
@@ -86,9 +101,11 @@ export default function App() {
               onPaste={handlePaste}
               
             />
-            {submitted && !firstName && (
-              <p className="err-text">This field is required</p>
-            )}
+          {submitted && (!firstName || !validateName(firstName)) && (
+            <p className="err-text">
+              {firstName ? "Invalid first name" : "This field is required"}
+            </p>
+          )}
           </div>
 
           <div className="box">
@@ -97,7 +114,7 @@ export default function App() {
               <span className="star-form">*</span>
             </label>
             <input
-              className={submitted && !lastName ? "err-input" : "inputext-form"}
+              className={submitted && !validateName(lastName) ? "err-input" : "inputext-form"}
               type="text"
               id="lastname"
               value={lastName}
@@ -105,9 +122,11 @@ export default function App() {
               onPaste={handlePaste}
               
             />
-            {submitted && !lastName && (
-              <p className="err-text">This field is required</p>
-            )}
+            {submitted && (!lastName || !validateName(lastName)) && (
+            <p className="err-text">
+              {lastName ? "Invalid last name" : "This field is required"}
+            </p>
+          )}
           </div>
         </div>
 
