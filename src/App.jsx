@@ -16,22 +16,16 @@ export default function App() {
 
 
   const validateName = (name)=>{
-    const minLength = 2;
-    const maxLength = 50;
-    if (name.length < minLength || name.length > maxLength) {
-      return false;
-    }
   
-    
-    const nameRegex = /^[A-Za-z\u0600-\u06FF\s]+$/;
+    const nameRegex = /^[A-Za-z\s]{2,50}$/;
     return nameRegex.test(name);
-
-
   }
+  
 
   const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex =/^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     return emailRegex.test(email);
+  
   };
 
   const handlePaste = useCallback((e) => {
@@ -40,6 +34,7 @@ export default function App() {
   }, []);
   
  const formIsValid = ()=>{
+  
   return validateName(firstName)&&validateName(lastName)&&validateEmail(email)&&radio&&message&&checkBox
  };
 
