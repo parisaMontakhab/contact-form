@@ -23,20 +23,16 @@ export default function App() {
   };
 
   const validateMessage = (message) => {
-    const trimmedMessage = message.trim();
-
-    const lengthValid =
-      trimmedMessage.length >= 10 && trimmedMessage.length <= 500;
+    const lengthValid = message.length >= 10 && message.length <= 500;
 
     const validCharsRegex = /^[a-zA-Z0-9\u0600-\u06FF\s.,?!'"]+$/;
-    const containsValidChars = validCharsRegex.test(trimmedMessage);
+    const containsValidChars = validCharsRegex.test(message);
 
     const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const containsURL = urlRegex.test(trimmedMessage);
+    const containsURL = urlRegex.test(message);
 
     return lengthValid && containsValidChars && !containsURL;
   };
-
 
   const handlePaste = useCallback((e) => {
     e.preventDefault();
@@ -157,11 +153,11 @@ export default function App() {
             onChange={(e) => setEmail(e.target.value)}
             onPaste={handlePaste}
           />
-           {submitted && (!email || !validateEmail(email)) && (
-              <p className="err-text">
-                {email ? "Invalid Email address" : "This field is required"}
-              </p>
-            )}
+          {submitted && (!email || !validateEmail(email)) && (
+            <p className="err-text">
+              {email ? "Invalid Email address" : "This field is required"}
+            </p>
+          )}
         </div>
 
         <div className="mb-4">
@@ -213,15 +209,19 @@ export default function App() {
           </label>
           <textarea
             className={
-              submitted && !validateMessage(message) ? "err-textarea" : "textarea-form "
+              submitted && !validateMessage(message)
+                ? "err-textarea"
+                : "textarea-form "
             }
             id="message"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => setMessage(e.target.value.trimStart())}
             onPaste={handlePaste}
           ></textarea>
-          {submitted && !validateMessage(message) && (
-            <p className="err-text">This field is required</p>
+          {submitted && (!message || !validateMessage(message)) && (
+            <p className="err-text">
+              {message ? "Invalid Message " : "This field is required"}
+            </p>
           )}
         </div>
 
