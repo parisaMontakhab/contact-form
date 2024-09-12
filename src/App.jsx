@@ -1,4 +1,4 @@
-import { useEffect, useState,useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./App.css";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -10,69 +10,82 @@ export default function App() {
   const [checkBox, setCheckBox] = useState(false);
   const [radio, setRadio] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [showMessage,setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
- 
-
-
-  const validateName = (name)=>{
-  
+  const validateName = (name) => {
     const nameRegex = /^[A-Za-z\s]{2,50}$/;
     return nameRegex.test(name);
-  }
-  
+  };
 
   const validateEmail = (email) => {
-    const emailRegex =/^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     return emailRegex.test(email);
-  
   };
+
+  const validateMessage = (message) => {
+    const trimmedMessage = message.trim();
+
+    const lengthValid =
+      trimmedMessage.length >= 10 && trimmedMessage.length <= 500;
+
+    const validCharsRegex = /^[a-zA-Z0-9\u0600-\u06FF\s.,?!'"]+$/;
+    const containsValidChars = validCharsRegex.test(trimmedMessage);
+
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const containsURL = urlRegex.test(trimmedMessage);
+
+    return lengthValid && containsValidChars && !containsURL;
+  };
+
 
   const handlePaste = useCallback((e) => {
     e.preventDefault();
-  
   }, []);
-  
- const formIsValid = ()=>{
-  
-  return validateName(firstName)&&validateName(lastName)&&validateEmail(email)&&radio&&message&&checkBox
- };
 
+  const formIsValid = () => {
+    return (
+      validateName(firstName) &&
+      validateName(lastName) &&
+      validateEmail(email) &&
+      radio &&
+      validateMessage(message) &&
+      checkBox
+    );
+  };
 
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
- const handleSubmit = useCallback((e) => {
-  e.preventDefault();
-  
-  if (formIsValid()) {
-    setShowMessage(true);
-    setSubmitted(false);
-    // Clear the form
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setMessage('');
-    setCheckBox(false);
-    setRadio('');
-  } else {
-    setSubmitted(true);
-  }
-}, [firstName, lastName, email, radio, message, checkBox]);
+      if (formIsValid()) {
+        setShowMessage(true);
+        setSubmitted(false);
+        // Clear the form
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+        setCheckBox(false);
+        setRadio("");
+      } else {
+        setSubmitted(true);
+      }
+    },
+    [firstName, lastName, email, radio, message, checkBox]
+  );
 
-  useEffect(()=>{
-    if(showMessage){
+  useEffect(() => {
+    if (showMessage) {
       const handleClick = () => {
         setShowMessage(false);
       };
-      document.body.addEventListener('click', handleClick);
+      document.body.addEventListener("click", handleClick);
 
       return () => {
-        document.body.removeEventListener('click', handleClick);
+        document.body.removeEventListener("click", handleClick);
       };
     }
-
-
-
-  },[showMessage])
+  }, [showMessage]);
 
   return (
     <div className="main-div">
@@ -87,20 +100,21 @@ export default function App() {
             </label>
             <input
               className={
-                submitted && !validateName(firstName) ? "err-input" : "inputext-form"
+                submitted && !validateName(firstName)
+                  ? "err-input"
+                  : "inputext-form"
               }
               type="text"
               id="firstname"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value.trim())}
               onPaste={handlePaste}
-              
             />
-          {submitted && (!firstName || !validateName(firstName)) && (
-            <p className="err-text">
-              {firstName ? "Invalid first name" : "This field is required"}
-            </p>
-          )}
+            {submitted && (!firstName || !validateName(firstName)) && (
+              <p className="err-text">
+                {firstName ? "Invalid first name" : "This field is required"}
+              </p>
+            )}
           </div>
 
           <div className="box">
@@ -109,19 +123,22 @@ export default function App() {
               <span className="star-form">*</span>
             </label>
             <input
-              className={submitted && !validateName(lastName) ? "err-input" : "inputext-form"}
+              className={
+                submitted && !validateName(lastName)
+                  ? "err-input"
+                  : "inputext-form"
+              }
               type="text"
               id="lastname"
               value={lastName}
               onChange={(e) => setLastName(e.target.value.trim())}
               onPaste={handlePaste}
-              
             />
             {submitted && (!lastName || !validateName(lastName)) && (
-            <p className="err-text">
-              {lastName ? "Invalid last name" : "This field is required"}
-            </p>
-          )}
+              <p className="err-text">
+                {lastName ? "Invalid last name" : "This field is required"}
+              </p>
+            )}
           </div>
         </div>
 
@@ -134,16 +151,17 @@ export default function App() {
             className={
               submitted && !validateEmail(email) ? "err-input" : "inputext-form"
             }
-            
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onPaste={handlePaste}
           />
-          {submitted && !validateEmail(email) && (
-            <p className="err-text">Please enter a valid email address</p>
-          )}
+           {submitted && (!email || !validateEmail(email)) && (
+              <p className="err-text">
+                {email ? "Invalid Email address" : "This field is required"}
+              </p>
+            )}
         </div>
 
         <div className="mb-4">
@@ -195,14 +213,14 @@ export default function App() {
           </label>
           <textarea
             className={
-              submitted && !message ? "err-textarea" : "textarea-form "
+              submitted && !validateMessage(message) ? "err-textarea" : "textarea-form "
             }
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onPaste={handlePaste}
           ></textarea>
-          {submitted && !message && (
+          {submitted && !validateMessage(message) && (
             <p className="err-text">This field is required</p>
           )}
         </div>
@@ -229,19 +247,20 @@ export default function App() {
         </div>
       </form>
 
-      { showMessage && <div className="overlay">
-        <div className="overlay-box">
-          <div className="message-container">
-            <FaCheckCircle className="check-icon" />
-            <p className="overlay-title">Message sent !</p>
+      {showMessage && (
+        <div className="overlay">
+          <div className="overlay-box">
+            <div className="message-container">
+              <FaCheckCircle className="check-icon" />
+              <p className="overlay-title">Message sent !</p>
+            </div>
+
+            <p className="overlay-text">
+              Thanks for completing the form,we'll be in touch soon!
+            </p>
           </div>
-
-          <p className="overlay-text">
-            Thanks for completing the form,we'll be in touch soon!
-          </p>
         </div>
-      </div>}
-
+      )}
     </div>
   );
 }
