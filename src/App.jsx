@@ -171,6 +171,7 @@ export default function App() {
               className={
                 radio === "General Enquiry" ? "active-query" : "radiodiv-form "
               }
+              onClick={() => setRadio("General Enquiry")}
             >
               <input
                 type="radio"
@@ -186,6 +187,7 @@ export default function App() {
               className={
                 radio === "Support Request" ? "active-query" : "radiodiv-form "
               }
+              onClick={() => setRadio("Support Request")}
             >
               <input
                 type="radio"
