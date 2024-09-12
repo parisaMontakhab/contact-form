@@ -227,7 +227,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="mb-4">
+        <div className="mb-4" onClick={() => setCheckBox(prev => !prev)}>
           <input
             type="checkbox"
             checked={checkBox}
