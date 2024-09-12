@@ -97,7 +97,7 @@ export default function App() {
               type="text"
               id="firstname"
               value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value.trim())}
               onPaste={handlePaste}
               
             />
@@ -118,7 +118,7 @@ export default function App() {
               type="text"
               id="lastname"
               value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value.trim())}
               onPaste={handlePaste}
               
             />
