@@ -1,11 +1,12 @@
-body,html{
-    overflow-y: hidden;
+body,
+html {
+  overflow-y: hidden;
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* form contact-us*/
 
@@ -24,10 +25,8 @@ body,html{
   width: 100%;
   max-width: 42rem;
   padding: 2rem;
-  margin: 0 auto; 
+  margin: 0 auto;
   box-sizing: border-box;
-
-  
 }
 
 .title-form {
@@ -39,17 +38,15 @@ body,html{
   margin-bottom: 1.25rem;
 }
 
-.flex-box{
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    margin-bottom: 16px;
-
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 16px;
 }
-.box{
-    width: 50%;
+.box {
+  width: 50%;
 }
-
 
 .label-form {
   display: block;
@@ -124,7 +121,6 @@ body,html{
   font-weight: 700;
   cursor: pointer;
   transition: opacity 0.3s ease;
-
 }
 
 .submitbtn-form:hover {
@@ -179,12 +175,10 @@ input[type="radio"] {
   outline: none;
 }
 
-
-
 /*error style*/
 
 .err-text {
-  color: hsl(0 66% 54% );
+  color: hsl(0 66% 54%);
   font-family: Karla, sans-serif;
   font-size: 0.875rem /* 14px */;
   margin-top: 0.5rem /* 8px */;
@@ -235,8 +229,8 @@ input[type="radio"] {
 
 .overlay-box {
   background-color: rgb(14, 52, 43);
-  color: hsl(0 0% 100% );
-  padding: 2.5rem ;
+  color: hsl(0 0% 100%);
+  padding: 2.5rem;
   border-radius: 1rem /* 16px */;
 }
 
@@ -244,7 +238,6 @@ input[type="radio"] {
   font-size: 1.125rem /* 18px */;
   line-height: 1.75rem /* 28px */;
   font-weight: 700;
-
 }
 
 .overlay-text {
@@ -254,7 +247,7 @@ input[type="radio"] {
 
 .message-container {
   display: flex;
- 
+
   margin-bottom: 10px;
 }
 
@@ -265,57 +258,62 @@ input[type="radio"] {
   margin-right: 10px; /* Space between icon and text */
 }
 
-
 /*responsive*/
 
 @media (max-width: 480px) {
-  .flex-box{
-      display: flex;
-      flex-direction: column;
-     
+  .flex-box {
+    display: flex;
+    flex-direction: column;
   }
-  .box{
-      width: 100%;
+  .box {
+    width: 100%;
   }
-  .radiodiv-form{
-      width: 100%;
+  .radiodiv-form {
+    width: 100%;
   }
   .form-contact {
-      width: 90%;
-      max-width: 100%;
-      min-height: 85vh;
-      max-height: 97vh;
-      padding: 1rem;
-  
-      
-    }
-  
-    .title-form{
+    width: 90%;
+    max-width: 100%;
+    min-height: 85vh;
+    max-height: 97vh;
+    padding: 1rem;
+  }
+
+  .title-form {
     font-size: 1.5rem;
     line-height: 2rem;
     font-family: Karla, sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
-    }
-  
-    .submitbtn-form{
-     margin-top: 0%;
-     margin-bottom: 2rem;
-      padding: 0.75rem;
-      font-weight: 500;
-    
-    }
-    .err-text {
-      font-size: 12px;
-      margin-top: 4px; /* 8px */;
-    }
-
-    .active-query {
-      width: 100%;
-     
-    }
-    
-   
-    
-   
   }
+
+  .submitbtn-form {
+    margin-top: 0%;
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    font-weight: 500;
+  }
+  .err-text {
+    font-size: 12px;
+    margin-top: 4px; /* 8px */
+  }
+
+  .active-query {
+    width: 100%;
+  }
+  .overlay-box {
+    padding: 2rem;
+
+    width: 90%;
+  }
+
+  .overlay-title {
+    font-size: 1rem /* 18px */;
+    line-height: 1rem /* 28px */;
+    font-weight: 400;
+  }
+
+  .check-icon {
+    font-size: 20px; /* Adjust size as needed */
+  }
+}
