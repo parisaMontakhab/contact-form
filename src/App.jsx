@@ -28,7 +28,7 @@ export default function App() {
     const validCharsRegex = /^[a-zA-Z0-9\u0600-\u06FF\s.,?!'"]+$/;
     const containsValidChars = validCharsRegex.test(message);
 
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
     const containsURL = urlRegex.test(message);
 
     return lengthValid && containsValidChars && !containsURL;
