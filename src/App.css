@@ -158,7 +158,6 @@ input[type="checkbox"] {
   border-radius: 0.5rem;
   border-width: 1px;
   border-style: solid;
-  
   cursor: pointer;
   background-color: hsl(148, 38%, 91%);
   border-color: hsl(169, 82%, 27%);
@@ -306,5 +305,17 @@ input[type="radio"] {
       font-weight: 500;
     
     }
+    .err-text {
+      font-size: 12px;
+      margin-top: 4px; /* 8px */;
+    }
+
+    .active-query {
+      width: 100%;
+     
+    }
+    
+   
+    
    
   }
