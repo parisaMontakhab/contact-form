@@ -52,6 +52,13 @@ export default function App() {
     e.preventDefault();
   }, []);
 
+  const handleRadioClick = (value) => {
+    setFormData({
+      ...formData,
+      radio: value
+    });
+  };
+
   const formIsValid = () => {
     const { firstName, lastName, email, message, radio, checkBox } = formData;
     return (
@@ -184,34 +191,36 @@ export default function App() {
               className={
                 formData.radio === "General Enquiry" ? "active-query" : "radiodiv-form "
               }
-              onClick={() => setRadio("General Enquiry")}
+              onClick={() => handleRadioClick("General Enquiry")}
             >
               <input
                 type="radio"
                 className="cursor-pointer"
                 value="General Enquiry"
                 name="radio"
+                id="radioGeneral"
                 checked={formData.radio === "General Enquiry"}
                 onChange={handleChange}
               />
-              <label className="radiolabel-form">General Enquiry</label>
+              <label className="radiolabel-form" htmlFor="radioGeneral">General Enquiry</label>
             </div>
 
             <div
               className={
                 formData.radio === "Support Request" ? "active-query" : "radiodiv-form "
               }
-              onClick={() => setRadio("Support Request")}
+              onClick={() => handleRadioClick("Support Request")}
             >
               <input
                 type="radio"
                 className="cursor-pointer"
                 value="Support Request"
                 name="radio"
+                id="radioSupport"
                 checked={formData.radio === "Support Request"}
                 onChange={handleChange}
               />
-              <label className="radiolabel-form">Support Request</label>
+              <label  htmlFor="radioSupport"className="radiolabel-form">Support Request</label>
             </div>
           </div>
           {submitted && !formData.radio && (
