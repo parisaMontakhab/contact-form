@@ -1,15 +1,19 @@
 import { useEffect, useState, useCallback } from "react";
 import "./App.css";
-import { FaCheckCircle } from "react-icons/fa";
+
 import MyMessage from "./components/MyMessage";
 
+const initialFormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  message: "",
+  checkBox: false,
+  radio: "",
+}
+
 export default function App() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [checkBox, setCheckBox] = useState(false);
-  const [radio, setRadio] = useState("");
+  const [formData,setFormData] = useState(initialFormState);
   const [submitted, setSubmitted] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
@@ -35,11 +39,21 @@ export default function App() {
     return lengthValid && containsValidChars && !containsURL;
   };
 
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+  
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : (type === "text" || type === "textarea") ? value.trim() : value,
+    });
+  };
+
   const handlePaste = useCallback((e) => {
     e.preventDefault();
   }, []);
 
   const formIsValid = () => {
+    const { firstName, lastName, email, message, radio, checkBox } = formData;
     return (
       validateName(firstName) &&
       validateName(lastName) &&
@@ -58,17 +72,12 @@ export default function App() {
         setShowMessage(true);
         setSubmitted(false);
         // Clear the form
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setMessage("");
-        setCheckBox(false);
-        setRadio("");
+        setFormData(initialFormState);
       } else {
         setSubmitted(true);
       }
     },
-    [firstName, lastName, email, radio, message, checkBox]
+    [formData]
   );
 
   useEffect(() => {
@@ -97,19 +106,19 @@ export default function App() {
             </label>
             <input
               className={
-                submitted && !validateName(firstName)
+                submitted && !validateName(formData.firstName)
                   ? "err-input"
                   : "inputext-form"
               }
               type="text"
               id="firstname"
-              value={firstName}
+              value={formData.firstName}
               onChange={(e) => setFirstName(e.target.value.trim())}
               onPaste={handlePaste}
             />
-            {submitted && (!firstName || !validateName(firstName)) && (
+            {submitted && (!formData.firstName || !validateName(formData.firstName)) && (
               <p className="err-text">
-                {firstName ? "Invalid first name" : "This field is required"}
+                {formData.firstName ? "Invalid first name" : "This field is required"}
               </p>
             )}
           </div>
@@ -121,19 +130,19 @@ export default function App() {
             </label>
             <input
               className={
-                submitted && !validateName(lastName)
+                submitted && !validateName(formData.lastName)
                   ? "err-input"
                   : "inputext-form"
               }
               type="text"
               id="lastname"
-              value={lastName}
+              value={formData.lastName}
               onChange={(e) => setLastName(e.target.value.trim())}
               onPaste={handlePaste}
             />
-            {submitted && (!lastName || !validateName(lastName)) && (
+            {submitted && (!formData.lastName || !validateName(formData.lastName)) && (
               <p className="err-text">
-                {lastName ? "Invalid last name" : "This field is required"}
+                {formData.lastName ? "Invalid last name" : "This field is required"}
               </p>
             )}
           </div>
@@ -146,17 +155,17 @@ export default function App() {
           </label>
           <input
             className={
-              submitted && !validateEmail(email) ? "err-input" : "inputext-form"
+              submitted && !validateEmail(formData.email) ? "err-input" : "inputext-form"
             }
             type="email"
             id="email"
-            value={email}
+            value={formData.email}
             onChange={(e) => setEmail(e.target.value)}
             onPaste={handlePaste}
           />
-          {submitted && (!email || !validateEmail(email)) && (
+          {submitted && (!formData.email || !validateEmail(formData.email)) && (
             <p className="err-text">
-              {email ? "Invalid Email address" : "This field is required"}
+              {formData.email ? "Invalid Email address" : "This field is required"}
             </p>
           )}
         </div>
@@ -170,7 +179,7 @@ export default function App() {
           <div className="flex-box ">
             <div
               className={
-                radio === "General Enquiry" ? "active-query" : "radiodiv-form "
+                formData.radio === "General Enquiry" ? "active-query" : "radiodiv-form "
               }
               onClick={() => setRadio("General Enquiry")}
             >
@@ -178,7 +187,7 @@ export default function App() {
                 type="radio"
                 className="cursor-pointer"
                 value="General Enquiry"
-                checked={radio === "General Enquiry"}
+                checked={formData.radio === "General Enquiry"}
                 onChange={(e) => setRadio(e.target.value)}
               />
               <label className="radiolabel-form">General Enquiry</label>
@@ -186,7 +195,7 @@ export default function App() {
 
             <div
               className={
-                radio === "Support Request" ? "active-query" : "radiodiv-form "
+                formData.radio === "Support Request" ? "active-query" : "radiodiv-form "
               }
               onClick={() => setRadio("Support Request")}
             >
@@ -194,13 +203,13 @@ export default function App() {
                 type="radio"
                 className="cursor-pointer"
                 value="Support Request"
-                checked={radio === "Support Request"}
+                checked={formData.radio === "Support Request"}
                 onChange={(e) => setRadio(e.target.value)}
               />
               <label className="radiolabel-form">Support Request</label>
             </div>
           </div>
-          {submitted && !radio && (
+          {submitted && !formData.radio && (
             <p className="err-text">Please select a query type</p>
           )}
         </div>
@@ -212,18 +221,18 @@ export default function App() {
           </label>
           <textarea
             className={
-              submitted && !validateMessage(message)
+              submitted && !validateMessage(formData.message)
                 ? "err-textarea"
                 : "textarea-form "
             }
             id="message"
-            value={message}
+            value={formData.message}
             onChange={(e) => setMessage(e.target.value.trimStart())}
             onPaste={handlePaste}
           ></textarea>
-          {submitted && (!message || !validateMessage(message)) && (
+          {submitted && (!formData.message || !validateMessage(formData.message)) && (
             <p className="err-text">
-              {message ? "Invalid Message " : "This field is required"}
+              {formData.message ? "Invalid Message " : "This field is required"}
             </p>
           )}
         </div>
@@ -231,14 +240,14 @@ export default function App() {
         <div className="mb-4" onClick={() => setCheckBox(prev => !prev)}>
           <input
             type="checkbox"
-            checked={checkBox}
+            checked={formData.checkBox}
             onChange={(e) => setCheckBox(e.target.checked)}
           />
           <span className="spantext-form">
             I consent to being contaced by the team
           </span>
           <span className="star-form">*</span>
-          {submitted && !checkBox && (
+          {submitted && !formData.checkBox && (
             <p className="err-text">
               To submit this form, please consent to being contacted
             </p>
