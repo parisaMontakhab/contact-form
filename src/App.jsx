@@ -44,7 +44,7 @@ export default function App() {
   
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? checked : (type === "text" || type === "textarea") ? value.trim() : value,
+      [name]: type === "checkbox" ? checked : (type === "textarea" ? value.trimStart() : value.trim()),
     });
   };
 
@@ -112,8 +112,9 @@ export default function App() {
               }
               type="text"
               id="firstname"
+              name="firstName"
               value={formData.firstName}
-              onChange={(e) => setFirstName(e.target.value.trim())}
+              onChange={handleChange}
               onPaste={handlePaste}
             />
             {submitted && (!formData.firstName || !validateName(formData.firstName)) && (
@@ -136,8 +137,9 @@ export default function App() {
               }
               type="text"
               id="lastname"
+              name="lastName"
               value={formData.lastName}
-              onChange={(e) => setLastName(e.target.value.trim())}
+              onChange={handleChange}
               onPaste={handlePaste}
             />
             {submitted && (!formData.lastName || !validateName(formData.lastName)) && (
@@ -159,8 +161,9 @@ export default function App() {
             }
             type="email"
             id="email"
+            name="email"
             value={formData.email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleChange}
             onPaste={handlePaste}
           />
           {submitted && (!formData.email || !validateEmail(formData.email)) && (
@@ -187,8 +190,9 @@ export default function App() {
                 type="radio"
                 className="cursor-pointer"
                 value="General Enquiry"
+                name="radio"
                 checked={formData.radio === "General Enquiry"}
-                onChange={(e) => setRadio(e.target.value)}
+                onChange={handleChange}
               />
               <label className="radiolabel-form">General Enquiry</label>
             </div>
@@ -203,8 +207,9 @@ export default function App() {
                 type="radio"
                 className="cursor-pointer"
                 value="Support Request"
+                name="radio"
                 checked={formData.radio === "Support Request"}
-                onChange={(e) => setRadio(e.target.value)}
+                onChange={handleChange}
               />
               <label className="radiolabel-form">Support Request</label>
             </div>
@@ -227,7 +232,8 @@ export default function App() {
             }
             id="message"
             value={formData.message}
-            onChange={(e) => setMessage(e.target.value.trimStart())}
+            name="message"
+            onChange={handleChange}
             onPaste={handlePaste}
           ></textarea>
           {submitted && (!formData.message || !validateMessage(formData.message)) && (
@@ -240,8 +246,9 @@ export default function App() {
         <div className="mb-4" onClick={() => setCheckBox(prev => !prev)}>
           <input
             type="checkbox"
+             name="checkBox"
             checked={formData.checkBox}
-            onChange={(e) => setCheckBox(e.target.checked)}
+            onChange={handleChange}
           />
           <span className="spantext-form">
             I consent to being contaced by the team
