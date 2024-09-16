@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import "./App.css";
 import { FaCheckCircle } from "react-icons/fa";
+import MyMessage from "./components/MyMessage";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
@@ -250,18 +251,7 @@ export default function App() {
       </form>
 
       {showMessage && (
-        <div className="overlay">
-          <div className="overlay-box">
-            <div className="message-container">
-              <FaCheckCircle className="check-icon" />
-              <p className="overlay-title">Message sent !</p>
-            </div>
-
-            <p className="overlay-text">
-              Thanks for completing the form,we'll be in touch soon!
-            </p>
-          </div>
-        </div>
+       <MyMessage/>
       )}
     </div>
   );
