@@ -58,6 +58,12 @@ export default function App() {
       radio: value
     });
   };
+  const handleCheckboxClick = () => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      checkBox: !prevFormData.checkBox
+    }));
+  };
 
   const formIsValid = () => {
     const { firstName, lastName, email, message, radio, checkBox } = formData;
@@ -252,7 +258,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="mb-4" onClick={() => setCheckBox(prev => !prev)}>
+        <div className="mb-4" onClick={handleCheckboxClick}>
           <input
             type="checkbox"
              name="checkBox"
