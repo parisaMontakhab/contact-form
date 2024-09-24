@@ -16,6 +16,15 @@ describe('MyForm', () => {
         const textAreaElement = screen.getByLabelText(/Message/i);
         const checkBoxElement = screen.getByRole('checkbox');
         const submitButton = screen.getByRole('button',{name:/submit/i});
+
+        expect(inputFirstName).toBeInTheDocument();
+        expect(inputLastName).toBeInTheDocument();
+        expect(inputEmail).toBeInTheDocument();
+        expect(inputGeneralquery).toBeInTheDocument();
+        expect(inputSupportQuery).toBeInTheDocument();
+        expect(textAreaElement).toBeInTheDocument();
+        expect(checkBoxElement).toBeInTheDocument();
+        expect(submitButton).toBeInTheDocument();
     })
     
 })
