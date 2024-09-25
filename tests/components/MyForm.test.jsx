@@ -3,6 +3,7 @@ import { it, expect, describe } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import MyForm from '../../src/components/MyForm';
+import userEvent from '@testing-library/user-event'
 
 
 describe('MyForm', () => {
