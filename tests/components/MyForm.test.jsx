@@ -6,9 +6,11 @@ import MyForm from '../../src/components/MyForm';
 
 
 describe('MyForm', () => {
-    it('should we have all of them when the form is rendered', () => {
+
+    it('should we have all of the elements when the form is rendered ', () => {
         render(<MyForm/>)
-        
+
+        expect(screen.getByText(/Contact Us/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/First Name/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Last Name/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Email Adress/i)).toBeInTheDocument();
