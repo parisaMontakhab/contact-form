@@ -33,6 +33,16 @@ describe('MyForm', () => {
       expect(screen.queryByText(/Invalid last name/i)).not.toBeInTheDocument();
         
     });
+    it('should reject invalid firstName and lastName', () => {
+        
+        fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: 'Pari@123'}});
+        fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: 'Monti!@123'}});
+        fireEvent.click(screen.getByRole('button',{name:/submit/i}));
+  
+        expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
+        expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
+          
+      });
 
     
 })
