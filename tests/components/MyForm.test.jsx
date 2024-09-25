@@ -21,7 +21,7 @@ describe('MyForm', () => {
         expect(screen.getByLabelText(/Message/i)).toBeInTheDocument();
         expect(screen.getByRole('checkbox')).toBeInTheDocument();
         expect(screen.getByRole('button',{name:/submit/i})).toBeInTheDocument();
-    });
+    }); 
 
     it('should accept valid firstName and lastName', () => {
         
@@ -33,6 +33,7 @@ describe('MyForm', () => {
       expect(screen.queryByText(/Invalid last name/i)).not.toBeInTheDocument();
         
     });
+
     it('should reject invalid firstName and lastName', () => {
         
         fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: 'Pari@123'}});
@@ -43,6 +44,17 @@ describe('MyForm', () => {
         expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
           
       });
+
+      it('should not submit form if firstname input or lastname input is missing ', () => {
+        
+        fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: ''}});
+        fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: ''}});
+        fireEvent.click(screen.getByRole('button',{name:/submit/i}));
+
+        expect(screen.queryAllByText(/This field is required/i).length).toBe(4);
+
+      });
+     
 
     
 })
