@@ -54,6 +54,17 @@ describe('MyForm', () => {
         expect(screen.queryAllByText(/This field is required/i).length).toBe(4);
 
       });
+
+      it('should reject if value of firstname or lastname was shorter than 2 charecters or longer than 50 charecters ', () => {
+        
+        fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: 'A'.repeat(51)}});
+        fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: 'C'.repeat(51)}});
+        fireEvent.click(screen.getByRole('button',{name:/submit/i}));
+
+        expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
+        expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
+
+      });
      
 
     
