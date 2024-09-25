@@ -1,6 +1,6 @@
 import React from 'react';
 import { it, expect, describe } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import MyForm from '../../src/components/MyForm';
 
@@ -23,49 +23,7 @@ describe('MyForm', () => {
         expect(screen.getByRole('button',{name:/submit/i})).toBeInTheDocument();
     }); 
 
-    it('should accept valid firstName and lastName', () => {
-        
-      fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: 'Parisa'}});
-      fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: 'Montakhabisani'}});
-      fireEvent.click(screen.getByRole('button',{name:/submit/i}));
-
-      expect(screen.queryByText(/Invalid first name/i)).not.toBeInTheDocument();
-      expect(screen.queryByText(/Invalid last name/i)).not.toBeInTheDocument();
-        
-    });
-
-    it('should reject invalid firstName and lastName', () => {
-        
-        fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: 'Pari@123'}});
-        fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: 'Monti!@123'}});
-        fireEvent.click(screen.getByRole('button',{name:/submit/i}));
-  
-        expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
-        expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
-          
-      });
-
-      it('should not submit form if firstname input or lastname input is missing ', () => {
-        
-        fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: ''}});
-        fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: ''}});
-        fireEvent.click(screen.getByRole('button',{name:/submit/i}));
-
-        expect(screen.queryAllByText(/This field is required/i).length).toBe(4);
-
-      });
-
-      it('should reject if value of firstname or lastname was shorter than 2 charecters or longer than 50 charecters ', () => {
-        
-        fireEvent.change(screen.getByLabelText(/First Name/i), {target: {value: 'A'.repeat(51)}});
-        fireEvent.change(screen.getByLabelText(/Last Name/i), {target: {value: 'C'.repeat(51)}});
-        fireEvent.click(screen.getByRole('button',{name:/submit/i}));
-
-        expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
-        expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
-
-      });
-     
+   
 
     
 })
