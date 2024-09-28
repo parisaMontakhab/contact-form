@@ -24,6 +24,19 @@ describe('MyForm', () => {
         expect(screen.getByRole('button',{name:/submit/i})).toBeInTheDocument();
     }); 
 
+    it('should not accept invalid first name and last name with number and like @/&..',async () => {
+        const user = userEvent.setup()
+        
+       await  user.type((screen.getByLabelText(/First Name/i)),'Pari@123');
+       await user.type((screen.getByLabelText(/Last Name/i)),'Monta$$123');
+       await  user.click(screen.getByRole('button',{name:/submit/i}));
+
+       expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
+       expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
+
+      
+    }); 
+
    
 
     
