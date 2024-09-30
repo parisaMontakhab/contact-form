@@ -10,7 +10,7 @@ describe("MyForm", () => {
     render(<MyForm />);
   });
 
-  it("should we have all of the elements when the form is rendered ", () => {
+  it("should return  all of the elements in the form ", () => {
     expect(screen.getByText(/Contact Us/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/First Name/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Last Name/i)).toBeInTheDocument();
@@ -44,6 +44,7 @@ describe("MyForm", () => {
     expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
     expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
   });
+
   it("should return invalid name if first name and last name are not between 2 and 50 charecters ", async () => {
     const user = userEvent.setup();
 
