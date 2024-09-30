@@ -66,4 +66,14 @@ describe("MyForm", () => {
     expect(screen.queryByText(/Invalid first name/i)).toBeInTheDocument();
     expect(screen.queryByText(/Invalid last name/i)).toBeInTheDocument();
   });
+
+  it('should return invalid Email adress',async()=>{
+    const user = userEvent.setup();
+
+    await user.type(screen.getByLabelText(/Email Adress/i),'user@yahoo.com');
+    await user.click(screen.getByRole("button", { name: /submit/i }));
+
+    expect(screen.queryByText(/Invalid Email address/i)).toBeInTheDocument();
+
+  })
 });
