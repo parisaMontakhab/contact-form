@@ -116,6 +116,14 @@ describe("MyForm", () => {
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/Invalid Message/i)).toBeInTheDocument();
   });
+  it('should not accept if message includs www link',async()=>{
+    const user = userEvent.setup();
+
+    await user.type(screen.getByLabelText(/Message/i),'www.example.com');
+    await user.click(screen.getByRole("button", { name: /submit/i }));
+    expect(screen.queryByText(/Invalid Message/i)).toBeInTheDocument();
+  });
+
 
 
 
