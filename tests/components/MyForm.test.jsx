@@ -88,5 +88,15 @@ describe("MyForm", () => {
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/Please select a query type/i)).not.toBeInTheDocument();
 
-  })
+  });
+  it('should not accept if message was not between 10 and 500 charecters',async()=>{
+    const user = userEvent.setup();
+
+    await user.type(screen.getByLabelText(/Message/i),'ABCDEFGHK');
+    await user.click(screen.getByRole("button", { name: /submit/i }));
+    expect(screen.queryByText(/Invalid Message/i)).toBeInTheDocument();
+    
+
+  });
+
 });
