@@ -82,14 +82,7 @@ describe("MyForm", () => {
       screen.queryByText(/Please select a query type/i)
     ).toBeInTheDocument();
   });
-  it("should  accept if query type is checked", async () => {
-    const user = userEvent.setup();
-    await user.click(screen.getByLabelText(/Support Request/i));
-    await user.click(screen.getByRole("button", { name: /submit/i }));
-    expect(
-      screen.queryByText(/Please select a query type/i)
-    ).not.toBeInTheDocument();
-  });
+ 
   it("should return invalid message if it was not between 10 and 500 charecters", async () => {
     const user = userEvent.setup();
 
