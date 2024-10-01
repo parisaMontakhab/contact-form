@@ -76,7 +76,7 @@ describe("MyForm", () => {
     expect(screen.queryByText(/Invalid Email address/i)).toBeInTheDocument();
 
   });
-  it('should not accept if query type does not checked',async()=>{
+  it('should return please select a query type  if query type does not checked',async()=>{
     const user = userEvent.setup();
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/Please select a query type/i)).toBeInTheDocument();
@@ -89,7 +89,7 @@ describe("MyForm", () => {
     expect(screen.queryByText(/Please select a query type/i)).not.toBeInTheDocument();
 
   });
-  it('should not accept if message was not between 10 and 500 charecters',async()=>{
+  it('should return invalid message if it was not between 10 and 500 charecters',async()=>{
     const user = userEvent.setup();
 
     await user.type(screen.getByLabelText(/Message/i),'A'.repeat(9));
@@ -102,29 +102,27 @@ describe("MyForm", () => {
     
 
   },10000);
-  it('should not accept if message includs these charecters',async()=>{
+  it('should return invalid message if includs these charecters',async()=>{
     const user = userEvent.setup();
 
     await user.type(screen.getByLabelText(/Message/i),'hi@#%&*__$$');
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/Invalid Message/i)).toBeInTheDocument();
   });
-  it('should not accept if message includs http link',async()=>{
+  it('should return invalid message  if includs http link',async()=>{
     const user = userEvent.setup();
 
     await user.type(screen.getByLabelText(/Message/i),'https://example.com');
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/Invalid Message/i)).toBeInTheDocument();
   });
-  it('should not accept if message includs www link',async()=>{
+  it('should return invalid message  if message includs www link',async()=>{
     const user = userEvent.setup();
 
     await user.type(screen.getByLabelText(/Message/i),'www.example.com');
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/Invalid Message/i)).toBeInTheDocument();
   });
-
-
 
 
 });
