@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function MyMessage (){
@@ -6,7 +6,7 @@ export default function MyMessage (){
         <div className="overlay">
         <div className="overlay-box">
           <div className="message-container">
-            <FaCheckCircle className="check-icon" />
+            <FaCheckCircle className="check-icon" data-testid='testId'/>
             <p className="overlay-title">Message sent !</p>
           </div>
 
