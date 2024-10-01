@@ -7,7 +7,7 @@ export default function MyMessage (){
         <div className="overlay-box">
           <div className="message-container">
             <FaCheckCircle className="check-icon" data-testid='testId'/>
-            <p className="overlay-title">Message sent !</p>
+            <p className="overlay-title" data-testid='message sent'>Message sent !</p>
           </div>
 
           <p className="overlay-text">

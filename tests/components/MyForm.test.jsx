@@ -1,4 +1,5 @@
 import React from "react";
+import { act } from "react";
 import { it, expect, describe } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -128,5 +129,22 @@ describe("MyForm", () => {
     await user.click(screen.getByRole("button", { name: /submit/i }));
     expect(screen.queryByText(/To submit this form, please consent to being contacted/i)).toBeInTheDocument();
   });
+
+  it("should display Message sent after valid submited", async () => {
+    const user = userEvent.setup();
+
+   await user.type(screen.getByLabelText(/First Name/i),'Parisa');
+   await user.type(screen.getByLabelText(/Last Name/i), 'Montakhabisani');
+   await user.type(screen.getByLabelText(/Email Adress/i), 'user@gmail.com');
+   await user.click(screen.getByLabelText(/Support Request/i));
+   await user.type(screen.getByLabelText(/Message/i), "This is a valid message");
+   await user.click(screen.getByText(/I consent to being contaced by the team/i));
+   await user.click(screen.getByRole("button", { name: /submit/i }));
+
+  expect(screen.queryByTestId(/message sent/i)).toBeInTheDocument();
+   
+  });
+
+
  
 });
