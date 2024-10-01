@@ -75,5 +75,17 @@ describe("MyForm", () => {
 
     expect(screen.queryByText(/Invalid Email address/i)).toBeInTheDocument();
 
+  });
+  it('should not accept if query type does not checked',async()=>{
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /submit/i }));
+    expect(screen.queryByText(/Please select a query type/i)).toBeInTheDocument();
+
+  });
+  it('should not accept if query type does not checked',async()=>{
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /submit/i }));
+    expect(screen.queryByText(/Please select a query type/i)).toBeInTheDocument();
+
   })
 });
