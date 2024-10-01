@@ -82,10 +82,11 @@ describe("MyForm", () => {
     expect(screen.queryByText(/Please select a query type/i)).toBeInTheDocument();
 
   });
-  it('should not accept if query type does not checked',async()=>{
+  it('should  accept if query type is checked',async()=>{
     const user = userEvent.setup();
+    await user.click(screen.getByLabelText(/Support Request/i));
     await user.click(screen.getByRole("button", { name: /submit/i }));
-    expect(screen.queryByText(/Please select a query type/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Please select a query type/i)).not.toBeInTheDocument();
 
   })
 });
